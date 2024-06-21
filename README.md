@@ -8,7 +8,7 @@ Due to this, objects of the `HashtableList` class can be used as a key in `dict`
 
 ### Example
 ```
->> import HashableList
+>> from hashtable_list import HashableList
 
 >> hashable_list  =  HashableList([1, 2, 3])
 >> dictionary  = {hashable_list: "value"}  
