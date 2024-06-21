@@ -7,6 +7,11 @@ def test_smoke_test():
     assert HashableList(1, 2, 3) == [1, 2, 3]
 
 
+def test_empty_list():
+    hashable_list = HashableList()
+    assert hashable_list == []
+
+
 def test_isinstance():
     assert isinstance(HashableList(), HashableList)
 
