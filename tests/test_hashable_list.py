@@ -1,3 +1,5 @@
+from functools import wraps
+from typing import Any, Callable
 from hashable_list.hashable_list import HashableList
 
 
@@ -51,3 +53,13 @@ def test_append():
 def test_pop():
     hashable_list = HashableList(1, 2, 3)
     assert hashable_list.pop() == 3
+
+
+def test_init_from_iterable_object():
+    hashable_list = HashableList([1, 2, 3])
+    assert hashable_list == [1, 2, 3]
+
+
+def test_init_from_few_iterable_objects():
+    hashable_list = HashableList([1, 2, 3], [4, 5, 6])
+    assert hashable_list == [[1, 2, 3], [4, 5, 6]]
