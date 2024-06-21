@@ -3,6 +3,9 @@ A new class that allows you to create a `HashtableList` object that repeats the 
 
 Due to this, objects of the `HashtableList` class can be used as a key in `dict` and a member in `set`.
 
+### Installing
+`pip install hashtable-list`
+
 ### Example
 ```
 >> import HashableList
