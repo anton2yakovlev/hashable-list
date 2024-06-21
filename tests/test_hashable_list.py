@@ -1,9 +1,22 @@
 from hashable_list.hashable_list import HashableList
 
 
-def test_first():
-    assert 1 == 1
-
-
 def test_smoke_test():
     assert HashableList(1, 2, 3) == [1, 2, 3]
+
+
+def test_isinstance():
+    assert isinstance(HashableList(), list)
+
+
+def test_hashable_list_as_key_in_dict():
+    hashable_list = HashableList(1, 2, 3)
+    dictionary = dict()
+    dictionary[hashable_list] = hashable_list
+
+
+def test_add_value_to_dict_key():
+    hashable_list = HashableList(1, 2, 3)
+    dictionary = dict()
+    dictionary[hashable_list] = hashable_list.copy()
+    hashable_list.append(4)
