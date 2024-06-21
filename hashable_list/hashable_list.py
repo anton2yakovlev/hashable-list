@@ -1,10 +1,22 @@
 from uuid import uuid4
-from typing import Any, List, Iterator
+from typing import Any, Iterable, List, Iterator, Union, overload
 
 
 class HashableList:
-    def __init__(self, *args: Any):
-        self.items: List[Any] = list(args)
+    @overload
+    def __init__(self) -> None: ...
+    @overload
+    def __init__(self, iterable: Iterable[Any]) -> None: ...
+
+    def __init__(self, *args: Union[Any, Iterable[Any]]) -> None:
+        if (
+            len(args) == 1
+            and isinstance(args[0], Iterable)
+            and not isinstance(args[0], (str, bytes, bytearray))
+        ):
+            self.items: List[Any] = list(args[0])
+        else:
+            self.items: List[Any] = list(args)
         self.hash_key = int(uuid4())
 
     def __hash__(self) -> int:
