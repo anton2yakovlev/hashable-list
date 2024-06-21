@@ -4,7 +4,7 @@ setup(
     name="hashable-list",
     version="0.1.0",
     packages=find_packages(),
-    description="A simple example library",
+    description="A hashable list type in Python",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/anton2yakovlev/hashable-list",
