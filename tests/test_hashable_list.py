@@ -63,3 +63,9 @@ def test_init_from_iterable_object():
 def test_init_from_few_iterable_objects():
     hashable_list = HashableList([1, 2, 3], [4, 5, 6])
     assert hashable_list == [[1, 2, 3], [4, 5, 6]]
+
+
+def test_sort():
+    hashable_list = HashableList([3, 1, 2])
+    hashable_list.sort(reverse=True)
+    assert hashable_list == [3, 2, 1]
