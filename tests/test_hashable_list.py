@@ -74,3 +74,17 @@ def test_sort():
     hashable_list = HashableList([3, 1, 2])
     hashable_list.sort(reverse=True)
     assert hashable_list == [3, 2, 1]
+
+
+def test_deep_list():
+    hashable_list = HashableList([1, [2, 3]])
+    dictionary = dict()
+    dictionary[hashable_list] = hashable_list
+    assert dictionary
+
+
+def test_deep_dict():
+    hashable_list = HashableList([1, {2: 3}])
+    dictionary = dict()
+    dictionary[hashable_list] = hashable_list
+    assert dictionary
