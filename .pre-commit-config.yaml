@@ -1,0 +1,5 @@
+repos:
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.5.5  # замените на последнюю версию ruff-pre-commit
+    hooks:
+      - id: ruff
