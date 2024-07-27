@@ -16,13 +16,13 @@ def test_isinstance():
 
 def test_hashable_list_as_key_in_dict():
     hashable_list = HashableList(1, 2, 3)
-    dictionary = dict()
+    dictionary = {}
     dictionary[hashable_list] = hashable_list
 
 
 def test_add_value_to_dict_key():
     hashable_list = HashableList(1, 2, 3)
-    dictionary = dict()
+    dictionary = {}
     dictionary[hashable_list] = hashable_list.copy()
     hashable_list.append(4)
 
@@ -76,13 +76,13 @@ def test_sort():
 
 def test_deep_list():
     hashable_list = HashableList([1, [2, 3]])
-    dictionary = dict()
+    dictionary = {}
     dictionary[hashable_list] = hashable_list
     assert dictionary
 
 
 def test_deep_dict():
     hashable_list = HashableList([1, {2: 3}])
-    dictionary = dict()
+    dictionary = {}
     dictionary[hashable_list] = hashable_list
     assert dictionary
